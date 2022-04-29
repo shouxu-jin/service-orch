@@ -13,6 +13,7 @@ import java.util.List;
         @JsonSubTypes.Type(value = ParamNode.class, name = "param"),
         @JsonSubTypes.Type(value = HttpNode.class, name = "http"),
         @JsonSubTypes.Type(value = ResultNode.class, name = "result"),
+        @JsonSubTypes.Type(value = JsonTransformNode.class, name = "jsonTransform"),
 })
 public class Node {
     private String id;

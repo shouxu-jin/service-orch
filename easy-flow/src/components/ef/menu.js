@@ -38,6 +38,13 @@ let menuListA = {
                     style: {}
                 }, {
                     id: '15',
+                    type: 'jsonTransform',
+                    name: 'json转换节点',
+                    ico: 'el-icon-odometer',
+                    // 自定义覆盖样式
+                    style: {}
+                }, {
+                    id: '16',
                     type: 'result',
                     name: '结果响应节点',
                     ico: 'el-icon-odometer',

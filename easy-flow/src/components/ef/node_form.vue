@@ -21,6 +21,38 @@
           <el-form-item label="ico图标">
             <el-input v-model="node.ico" :disabled="true"></el-input>
           </el-form-item>
+
+          <el-form-item label="参数名" v-show="node.type === 'param'">
+            <el-input v-model="node.paramName"></el-input>
+          </el-form-item>
+          <el-form-item label="参数表达式" v-show="node.type === 'param'">
+            <el-input v-model="node.expression"></el-input>
+          </el-form-item>
+
+          <el-form-item label="返回模板" v-show="node.type === 'result'">
+            <el-input v-model="node.template"></el-input>
+          </el-form-item>
+
+          <el-form-item label="请求地址" v-show="node.type === 'http'">
+            <el-input v-model="node.url"></el-input>
+          </el-form-item>
+          <el-form-item label="请求体" v-show="node.type === 'http'">
+            <el-input v-model="node.body"></el-input>
+          </el-form-item>
+          <el-form-item label="请求头" v-show="node.type === 'http'">
+            <el-input v-model="node.heanders"></el-input>
+          </el-form-item>
+          <el-form-item label="响应结果名称" v-show="node.type === 'http'">
+            <el-input v-model="node.resultName"></el-input>
+          </el-form-item>
+
+          <el-form-item label="转换输入" v-show="node.type === 'jsonTransform'">
+            <el-input v-model="node.transformFrom"></el-input>
+          </el-form-item>
+          <el-form-item label="转换输出" v-show="node.type === 'jsonTransform'">
+            <el-input v-model="node.transformTo"></el-input>
+          </el-form-item>
+
           <el-form-item>
             <el-button type="primary" icon="el-icon-check" @click="save">保存</el-button>
           </el-form-item>
