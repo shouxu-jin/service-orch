@@ -2,15 +2,17 @@ package com.nari.service.orch.define;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.nari.service.orch.define.nodes.EndNode;
-import com.nari.service.orch.define.nodes.StartNode;
+import com.nari.service.orch.define.nodes.*;
 
 import java.util.List;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = StartNode.class, name = "startNode"),
-        @JsonSubTypes.Type(value = EndNode.class, name = "endNode"),
+        @JsonSubTypes.Type(value = StartNode.class, name = "start"),
+        @JsonSubTypes.Type(value = EndNode.class, name = "end"),
+        @JsonSubTypes.Type(value = ParamNode.class, name = "param"),
+        @JsonSubTypes.Type(value = HttpNode.class, name = "http"),
+        @JsonSubTypes.Type(value = ResultNode.class, name = "result"),
 })
 public class Node {
     private String id;
@@ -77,3 +79,4 @@ public class Node {
         this.lineNodes = lineNodes;
     }
 }
+
