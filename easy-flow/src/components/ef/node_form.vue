@@ -100,24 +100,24 @@
             },
             // 修改连线
             saveLine () {
-                this.$emit('setLineCondition', this.line.from, this.line.to,this.line.type, this.line.condition)
+                this.$emit('setLineCondition', this.line.from, this.line.to, this.line.type, this.line.condition)
             },
             // 修改流程名称
             saveBoard () {
                 this.$emit('setBoardName', this.board)
             },
             save () {
-              let newNode;
-              let index;
-              this.data.nodeList.filter((node, idx) => {
-                  if (node.id === this.node.id) {
-                    newNode = cloneDeep(this.node);
-                    index = idx;
+                let newNode
+                let index
+                this.data.nodeList.filter((node, idx) => {
+                    if (node.id === this.node.id) {
+                        newNode = cloneDeep(this.node)
+                        index = idx
                     }
                 })
-              this.data.nodeList.splice(index, 1)
-              this.data.nodeList.push(newNode)
-              this.$emit('repaintEverything')
+                this.data.nodeList.splice(index, 1)
+                this.data.nodeList.push(newNode)
+                this.$emit('repaintEverything')
             }
         }
     }

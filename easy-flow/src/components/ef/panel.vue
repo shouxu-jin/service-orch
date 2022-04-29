@@ -143,7 +143,7 @@
             this.jsPlumb = jsPlumb.getInstance()
             this.$nextTick(() => {
                 // 默认加载流程A的数据、在这里可以根据具体的业务返回符合流程数据格式的数据即可
-                this.dataReload({id: Math.random().toString(36).substr(3, 10), name: '',serviceId: '', nodeList: [], lineList: []})
+                this.dataReload({id: Math.random().toString(36).substr(3, 10), name: '', serviceId: '', nodeList: [], lineList: []})
             })
         },
         methods: {
