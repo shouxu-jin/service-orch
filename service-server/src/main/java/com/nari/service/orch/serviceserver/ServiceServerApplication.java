@@ -1,4 +1,4 @@
-package com.nari.serviceorch.serviceserver;
+package com.nari.service.orch.serviceserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

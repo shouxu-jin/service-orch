@@ -1,4 +1,4 @@
-package com.nari.serviceorch.serviceserver;
+package com.nari.service.orch.serviceserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
