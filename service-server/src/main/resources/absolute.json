@@ -1,0 +1,44 @@
+{
+  "id": "xp4ccs2hc",
+  "name": "响应绝对结果值",
+  "serviceId": "absolute",
+  "nodeList": [
+    {
+      "id": "zanh4brax7",
+      "name": "开始节点",
+      "type": "start",
+      "left": "225px",
+      "top": "48px",
+      "ico": "el-icon-time"
+    },
+    {
+      "id": "jwv1bwqi9",
+      "name": "结束节点",
+      "type": "end",
+      "left": "225px",
+      "top": "358px",
+      "ico": "el-icon-time"
+    },
+    {
+      "id": "lec56ees7",
+      "name": "结果响应节点",
+      "type": "result",
+      "left": "227px",
+      "top": "196px",
+      "ico": "el-icon-odometer",
+      "template": "{ \t\"id\": \"xp4ccs2hc\", \t\"name\": \"响应绝对结果值\", \t\"serviceId\": \"absolute\", \t\"nodeList\": [ \t\t{ \t\t\t\"id\": \"zanh4brax7\", \t\t\t\"name\": \"开始节点\", \t\t\t\"type\": \"start\", \t\t\t\"left\": \"225px\", \t\t\t\"top\": \"48px\", \t\t\t\"ico\": \"el-icon-time\" \t\t}, \t\t{ \t\t\t\"id\": \"lec56ees7\", \t\t\t\"name\": \"结果响应节点\", \t\t\t\"type\": \"result\", \t\t\t\"left\": \"227px\", \t\t\t\"top\": \"196px\", \t\t\t\"ico\": \"el-icon-odometer\" \t\t}, \t\t{ \t\t\t\"id\": \"jwv1bwqi9\", \t\t\t\"name\": \"结束节点\", \t\t\t\"type\": \"end\", \t\t\t\"left\": \"225px\", \t\t\t\"top\": \"358px\", \t\t\t\"ico\": \"el-icon-time\" \t\t} \t], \t\"lineList\": [ \t\t{ \t\t\t\"from\": \"zanh4brax7\", \t\t\t\"to\": \"lec56ees7\", \t\t\t\"type\": \"direct\" \t\t}, \t\t{ \t\t\t\"from\": \"lec56ees7\", \t\t\t\"to\": \"jwv1bwqi9\", \t\t\t\"type\": \"direct\" \t\t} \t] }"
+    }
+  ],
+  "lineList": [
+    {
+      "from": "zanh4brax7",
+      "to": "lec56ees7",
+      "type": "direct"
+    },
+    {
+      "from": "lec56ees7",
+      "to": "jwv1bwqi9",
+      "type": "direct"
+    }
+  ]
+}
