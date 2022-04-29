@@ -167,6 +167,7 @@
                         this.$refs.nodeForm.lineInit({
                             from: conn.sourceId,
                             to: conn.targetId,
+                            type: 'direct',
                             condition: conn.getLabel()
                         })
                     })
@@ -175,7 +176,7 @@
                         let from = evt.source.id
                         let to = evt.target.id
                         if (this.loadEasyFlowFinish) {
-                            this.data.lineList.push({from: from, to: to})
+                            this.data.lineList.push({from: from, to: to, type: 'direct'})
                         }
                     })
 
@@ -258,7 +259,7 @@
                 })
             },
             // 设置连线条件
-            setLineCondition (from, to, condition) {
+            setLineCondition (from, to, type, condition) {
                 var conn = this.jsPlumb.getConnections({
                     source: from,
                     target: to
@@ -275,6 +276,7 @@
                 this.data.lineList.forEach(function (line) {
                     if (line.from == from && line.to == to) {
                         line.condition = condition
+                        line.type = type
                     }
                 })
             },

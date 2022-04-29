@@ -27,6 +27,13 @@
         </el-form>
 
         <el-form :model="line" ref="dataForm" label-width="80px" v-show="type === 'line'">
+          <el-form-item label="类型">
+            <el-select v-model="line.type">
+              <el-option label="直连" value="direct"></el-option>
+              <el-option label="条件" value="condition"></el-option>
+              <el-option label="循环" value="loop"></el-option>
+            </el-select>
+          </el-form-item>
           <el-form-item label="条件">
             <el-input v-model="line.condition"></el-input>
           </el-form-item>
@@ -93,7 +100,7 @@
             },
             // 修改连线
             saveLine () {
-                this.$emit('setLineCondition', this.line.from, this.line.to, this.line.condition)
+                this.$emit('setLineCondition', this.line.from, this.line.to,this.line.type, this.line.condition)
             },
             // 修改流程名称
             saveBoard () {
