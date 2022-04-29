@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.nari.service.orch.define.nodes.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
@@ -22,7 +23,7 @@ public class Node {
     private String left;
     private String top;
     private String ico;
-    private List<LineNode> lineNodes;
+    private List<LineNode> lineNodes = new ArrayList<>();
 
     public String getId() {
         return id;

@@ -4,6 +4,14 @@ public class LineNode {
     private Line line;
     private Node node;
 
+    public LineNode() {
+    }
+
+    public LineNode(Line line, Node node) {
+        this.line = line;
+        this.node = node;
+    }
+
     public Line getLine() {
         return line;
     }
