@@ -132,7 +132,8 @@
                             document.onmouseup = null
                         }
                         vnode.context.$refs.nodeForm.boardInit({
-                            name: vnode.context.data.name
+                            name: vnode.context.data.name,
+                            serviceId: vnode.context.data.serviceId
                         })
                     }
                 }
