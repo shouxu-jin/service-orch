@@ -100,15 +100,17 @@
                 this.$emit('setBoardName', this.board)
             },
             save () {
-                this.data.nodeList.filter((node) => {
-                    if (node.id === this.node.id) {
-                        node.name = this.node.name
-                        node.left = this.node.left
-                        node.top = this.node.top
-                        node.ico = this.node.ico
-                        this.$emit('repaintEverything')
+              let newNode;
+              let index;
+              this.data.nodeList.filter((node, idx) => {
+                  if (node.id === this.node.id) {
+                    newNode = cloneDeep(this.node);
+                    index = idx;
                     }
                 })
+              this.data.nodeList.splice(index, 1)
+              this.data.nodeList.push(newNode)
+              this.$emit('repaintEverything')
             }
         }
     }
