@@ -1,0 +1,89 @@
+{
+	"id": "fe25w9m9ab",
+	"name": "混合接口",
+	"serviceId": "mixed",
+	"nodeList": [
+		{
+			"id": "a77nizbvkp",
+			"name": "开始节点",
+			"type": "start",
+			"left": "270px",
+			"top": "51px",
+			"ico": "el-icon-time"
+		},
+		{
+			"id": "c0deu0n85",
+			"name": "结束节点",
+			"type": "end",
+			"left": "265px",
+			"top": "620px",
+			"ico": "el-icon-time"
+		},
+		{
+			"id": "o7cftnc6g",
+			"name": "http请求节点",
+			"type": "http",
+			"left": "267px",
+			"top": "150px",
+			"ico": "el-icon-odometer",
+			"url": "http://localhost:8081/serve/execute?serviceId=success",
+			"resultName": "successResult"
+		},
+		{
+			"id": "mj7a2y5yk",
+			"name": "上下文存储节点",
+			"type": "store",
+			"left": "291px",
+			"top": "249px",
+			"ico": "el-icon-odometer",
+			"storeName": "failServiceId",
+			"expression": "fail"
+		},
+		{
+			"id": "w5br83d5dc",
+			"name": "http请求节点1",
+			"type": "http",
+			"left": "262px",
+			"top": "347px",
+			"ico": "el-icon-odometer",
+			"url": "http://localhost:8081/serve/execute?serviceId=${failServiceId}",
+			"resultName": "failResult"
+		},
+		{
+			"id": "s6jq7udfj",
+			"name": "结果响应节点",
+			"type": "result",
+			"left": "273px",
+			"top": "471px",
+			"ico": "el-icon-odometer",
+			"template": "{\"successResult\": ${json(successResult.data)}, \"failCode\": \"${failResult.code}\"}"
+		}
+	],
+	"lineList": [
+		{
+			"from": "a77nizbvkp",
+			"to": "o7cftnc6g",
+			"type": "direct"
+		},
+		{
+			"from": "s6jq7udfj",
+			"to": "c0deu0n85",
+			"type": "direct"
+		},
+		{
+			"from": "o7cftnc6g",
+			"to": "mj7a2y5yk",
+			"type": "direct"
+		},
+		{
+			"from": "mj7a2y5yk",
+			"to": "w5br83d5dc",
+			"type": "direct"
+		},
+		{
+			"from": "w5br83d5dc",
+			"to": "s6jq7udfj",
+			"type": "direct"
+		}
+	]
+}

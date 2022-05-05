@@ -1,0 +1,44 @@
+{
+	"id": "n124dap8v",
+	"name": "失败接口",
+	"serviceId": "fail",
+	"nodeList": [
+		{
+			"id": "bv62u9fc6",
+			"name": "开始节点",
+			"type": "start",
+			"left": "154px",
+			"top": "54px",
+			"ico": "el-icon-time"
+		},
+		{
+			"id": "6743om2g9p",
+			"name": "结束节点",
+			"type": "end",
+			"left": "159px",
+			"top": "339px",
+			"ico": "el-icon-time"
+		},
+		{
+			"id": "1ko1rpet2",
+			"name": "结果响应节点",
+			"type": "result",
+			"left": "157px",
+			"top": "187px",
+			"ico": "el-icon-odometer",
+			"template": "{\"code\":\"500\", \"message\":\"fail\"}"
+		}
+	],
+	"lineList": [
+		{
+			"from": "bv62u9fc6",
+			"to": "1ko1rpet2",
+			"type": "direct"
+		},
+		{
+			"from": "1ko1rpet2",
+			"to": "6743om2g9p",
+			"type": "direct"
+		}
+	]
+}
