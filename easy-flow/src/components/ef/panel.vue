@@ -47,7 +47,7 @@
       </div>
     </div>
     <!-- 流程数据详情 -->
-    <flow-info v-if="flowInfoVisible" ref="flowInfo" :data="data"></flow-info>
+    <flow-info v-if="flowInfoVisible" ref="flowInfo" :data="data" @dataReload="dataReload"></flow-info>
     <flow-help v-if="flowHelpVisible" ref="flowHelp"></flow-help>
   </div>
 

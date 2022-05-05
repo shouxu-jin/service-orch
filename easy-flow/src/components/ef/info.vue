@@ -4,6 +4,7 @@
             :visible.sync="dialogVisible"
             width="70%"
     >
+      <el-button type="info" plain round icon="el-icon-document" @click="processImport" size="mini">流程导入</el-button>
         <el-alert
                 title="使用说明"
                 type="warning"
@@ -18,6 +19,7 @@
                 :value="flowJsonData"
                 :options="options"
                 class="code"
+                @changes="changes"
         ></codemirror>
     </el-dialog>
 </template>
@@ -26,18 +28,18 @@
     import 'codemirror/lib/codemirror.css'
     import { codemirror } from 'vue-codemirror'
 
-    require("codemirror/mode/javascript/javascript.js")
+    require('codemirror/mode/javascript/javascript.js')
 
     export default {
         props: {
-            data: Object,
+            data: Object
         },
-        data() {
+        data () {
             return {
                 dialogVisible: false,
                 flowJsonData: {},
                 options: {
-                    mode: {name: "javascript", json: true},
+                    mode: {name: 'javascript', json: true},
                     lineNumbers: true
                 }
             }
@@ -46,9 +48,16 @@
             codemirror
         },
         methods: {
-            init() {
+            init () {
                 this.dialogVisible = true
                 this.flowJsonData = JSON.stringify(this.data, null, 4).toString()
+            },
+            processImport () {
+                let data = JSON.parse(this.flowJsonData)
+                this.$emit('dataReload', data)
+            },
+            changes (codemirror) {
+                this.flowJsonData = codemirror.getValue()
             }
         }
     }
