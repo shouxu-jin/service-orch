@@ -24,8 +24,8 @@ let menuListA = {
                     style: {}
                 }, {
                     id: '13',
-                    type: 'param',
-                    name: '参数提取节点',
+                    type: 'store',
+                    name: '上下文存储节点',
                     ico: 'el-icon-odometer',
                     // 自定义覆盖样式
                     style: {}

@@ -11,7 +11,7 @@ import java.util.List;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = StartNode.class, name = "start"),
         @JsonSubTypes.Type(value = EndNode.class, name = "end"),
-        @JsonSubTypes.Type(value = ParamNode.class, name = "param"),
+        @JsonSubTypes.Type(value = StoreNode.class, name = "store"),
         @JsonSubTypes.Type(value = HttpNode.class, name = "http"),
         @JsonSubTypes.Type(value = ResultNode.class, name = "result"),
         @JsonSubTypes.Type(value = JsonTransformNode.class, name = "jsonTransform"),

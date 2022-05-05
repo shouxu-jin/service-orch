@@ -1,7 +1,7 @@
 {
   "id": "xp4ccs2hc",
   "name": "响应绝对结果值",
-  "serviceId": "absolute",
+  "serviceId": "absolute2",
   "nodeList": [
     {
       "id": "zanh4brax7",
@@ -26,7 +26,7 @@
       "left": "227px",
       "top": "196px",
       "ico": "el-icon-odometer",
-      "template": "{\"serviceId\":\"${serviceId}\"}"
+      "template": "{\"serviceId\":\"SB\"}"
     }
   ],
   "lineList": [

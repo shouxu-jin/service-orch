@@ -22,10 +22,10 @@
             <el-input v-model="node.ico" :disabled="true"></el-input>
           </el-form-item>
 
-          <el-form-item label="参数名" v-show="node.type === 'param'">
-            <el-input v-model="node.paramName"></el-input>
+          <el-form-item label="参数名" v-show="node.type === 'store'">
+            <el-input v-model="node.storeName"></el-input>
           </el-form-item>
-          <el-form-item label="参数表达式" v-show="node.type === 'param'">
+          <el-form-item label="参数表达式" v-show="node.type === 'store'">
             <el-input v-model="node.expression"></el-input>
           </el-form-item>
 
