@@ -15,13 +15,11 @@ import org.springframework.web.client.RestTemplate;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
 import java.util.Map;
 
 @Service
 public class HttpNodeExecutor implements NodeExecutor, InitializingBean {
 
-    public static final String SUFFIX = "Json";
     private RestTemplate restTemplate;
 
     @Override
@@ -43,8 +41,7 @@ public class HttpNodeExecutor implements NodeExecutor, InitializingBean {
         }
         HttpEntity<String> httpEntity = new HttpEntity<>(body, httpHeaders);
         String result = restTemplate.postForEntity(url, httpEntity, String.class).getBody();
-        context.put(httpNode.getResultName(), result);
-        context.put(httpNode.getResultName() + SUFFIX, JsonUtil.parse(result, Map.class));
+        context.put(httpNode.getResultName(), JsonUtil.parse(result, Map.class));
     }
 
     @Override
