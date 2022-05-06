@@ -26,7 +26,7 @@
 			"left": "267px",
 			"top": "150px",
 			"ico": "el-icon-odometer",
-			"url": "http://localhost:8081/serve/execute?serviceId=success",
+			"url": "http://localhost:8081/serve/execute/success",
 			"resultName": "successResult"
 		},
 		{
@@ -46,7 +46,7 @@
 			"left": "262px",
 			"top": "347px",
 			"ico": "el-icon-odometer",
-			"url": "http://localhost:8081/serve/execute?serviceId=${failServiceId}",
+			"url": "http://localhost:8081/serve/execute/${failServiceId}",
 			"resultName": "failResult"
 		},
 		{
